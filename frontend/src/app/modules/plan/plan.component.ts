@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanService } from 'src/app/services/plan/plan.service';
 
 
 @Component({
@@ -9,12 +8,8 @@ import { PlanService } from 'src/app/services/plan/plan.service';
 })
 export class PlanComponent implements OnInit {
 
-  constructor(private PlanesService:PlanService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.PlanesService.ConsultarPlanes().subscribe(datos => {
-      console.log(datos);
-    });
-  }
+  ngOnInit(): void { }
 
 }
