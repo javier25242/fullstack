@@ -1,0 +1,42 @@
+@use '_font-weight.scss' as font-weight;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #152536;
+}
+
+li {
+  list-style: none;
+}
+
+.telecom-semibold {
+  font-weight: font-weight.$telecom-weight-semi-bold;
+}
+
+.telecom-bold {
+  font-weight: font-weight.$telecom-weight-bold;
+}
+
+.telecom-extra-bold {
+  font-weight: font-weight.$telecom-weight-extra-bold;
+}
+
+.telecom-light {
+  font-weight: font-weight.$telecom-weight-light;
+}
+
+.telecom-medium {
+  font-weight: font-weight.$telecom-weight-medium;
+}
+
+.telecom-regular {
+  font-weight: font-weight.$telecom-weight-normal;
+}
+
+.section-title {
+  color: #6c757d;
+}
