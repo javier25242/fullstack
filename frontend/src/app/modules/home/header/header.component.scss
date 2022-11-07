@@ -1,0 +1,27 @@
+.row {
+  flex-direction: row-reverse;
+}
+
+#image-container {
+  img {
+    width: 105%;
+    margin-left: 29%;
+    margin-top: 10%;
+  }
+}
+
+h1 span {
+  color: #3D8BFD;
+}
+
+h4 {
+  width: 100%;
+  color: #6C757D;
+}
+
+.col-md-5, .col-md-7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

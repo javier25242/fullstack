@@ -1,0 +1,16 @@
+
+::placeholder {
+  opacity: 0.5;
+}
+
+button {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.margin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
