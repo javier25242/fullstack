@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlanService } from 'src/app/services/plan/plan.service';
+import { PlanInterface } from '../../interfaces/plan/plan-interface';
 
 
 @Component({
@@ -8,8 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanComponent implements OnInit {
 
-  constructor() { }
+  planes: any = [];
 
-  ngOnInit(): void { }
+  constructor(private PlanService:PlanService) { }
+
+  ngOnInit(): void {
+    this.PlanService.consultarPlanes().subscribe(
+      res => {
+        this.planes = res;
+      },
+      err => console.error(err)
+    );
+  }
 
 }
