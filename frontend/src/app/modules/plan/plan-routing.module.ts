@@ -8,13 +8,8 @@ const routes: Routes = [
   {
     path: '',
     component: PlanComponent,
-    pathMatch: 'full'
-  },
+    pathMatch: 'full',
 
-  {
-    path: 'add',
-    component: AddComponent,
-    pathMatch: 'full'
   },
 
   {
@@ -23,10 +18,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  {
-    path: '**',
-    redirectTo: 'plan'
-  }
 ];
 
 @NgModule({

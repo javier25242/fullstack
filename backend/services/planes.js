@@ -17,11 +17,12 @@ async function getMultiple(page = 1){
 }
 
 async function create(planes){
+  console.log(planes)
     const result = await db.query(
       `INSERT INTO plan 
       (Precio, Descripcion, Nombre) 
       VALUES 
-      (${planes.Precio}, ${planes.Descripcion}, ${planes.Nombre})`
+      (${planes.Precio}, ${planes.descripcion}, ${planes.nombre})`
     );
   
     let message = 'Error in creating plan';
@@ -33,10 +34,10 @@ async function create(planes){
     return {message};
   }
 
-async function update(id, programmingLanguage){
+async function update(id, planes){
     const result = await db.query(
         `UPDATE programming_languages 
-        SET Precio="${planes.Precio}", Descripcion=${planes.Descripcion}, Nombre=${planes.Nombre}
+        SET Nombre=${planes.Nombre}, Precio="${planes.Precio}", Descripcion=${planes.Descripcion} 
         WHERE id=${id}` 
     );
   

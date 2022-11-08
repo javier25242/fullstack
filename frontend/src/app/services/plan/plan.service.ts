@@ -16,7 +16,7 @@ export class PlanService {
     return this.servicio.get(`${this.servidor}/planes`);
   }
 
-  consultarPlan(id: string){
+  consultarPlan(id: number){
     return this.servicio.get(`${this.servidor}/planes/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class PlanService {
     return this.servicio.post(`${this.servidor}/planes`, plan);
   }
 
-  updatePlan(id: string, updatePlan: PlanInterface): Observable<PlanInterface>{
+  updatePlan(id: number|undefined, updatePlan: PlanInterface): Observable<PlanInterface>{
     return this.servicio.put(`${this.servidor}/planes/${id}`, updatePlan);
   }
 
-  deletePlan(id: string){
+  deletePlan(id: number){
     return this.servicio.delete(`${this.servidor}/planes/${id}`);
   }
 }

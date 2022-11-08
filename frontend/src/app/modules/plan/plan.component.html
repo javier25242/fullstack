@@ -1,11 +1,15 @@
-<div class="colm-md-4" >
+<div class="colm-md-4" *ngFor="let data of planes">
   <div class="card text-center">
     <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-      nombre
+      {{data.Nombre}}
       <button class="btn btn-danger"></button>
     </div>
     <div class="card-body">
-      <p>descripcion</p>
+      <p>{{data.IDPlan}}</p>
+      <a href="/plan/edit" class="btn btn-info btn-block"></a>
+    </div>
+    <div class="card-body">
+      <p>{{data.Descripcion}}</p>
       <a href="/plan/edit" class="btn btn-info btn-block"></a>
     </div>
   </div>

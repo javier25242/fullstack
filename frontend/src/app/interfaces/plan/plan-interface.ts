@@ -1,5 +1,5 @@
 export interface PlanInterface {
-  Nombre?: string;
+  nombre?: string;
   id?: number;
   precio?: number;
   image?: string;

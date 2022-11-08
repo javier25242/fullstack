@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanService } from 'src/app/services/plan/plan.service';
-import { PlanInterface } from '../../interfaces/plan/plan-interface';
 
 
 @Component({
@@ -16,8 +15,9 @@ export class PlanComponent implements OnInit {
 
   ngOnInit(): void {
     this.PlanService.consultarPlanes().subscribe(
-      res => {
-        this.planes = res;
+      (res:any) => {
+        console.log(res);
+        this.planes = res?.data;
       },
       err => console.error(err)
     );
