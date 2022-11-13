@@ -14,27 +14,18 @@ export class EditComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   plan: PlanInterface = {
-    nombre: '',
-    descripcion: '',
-  }
+    IDPlan: 0,
+    Nombre: '',
+    Precio: 0,
+    Descripcion: '',
+  };
 
   edit: boolean = false;
 
   constructor(private planService:PlanService, private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const params = this.activatedRoute.snapshot.params;
-    if (params.id) {
-      this.planService.consultarPlan(params.id)
-        .subscribe(
-          res => {
-            console.log(res);
-            this.plan = res;
-            this.edit = true;
-          },
-          err => console.log(err)
-        )
-    }
+
   }
 
   /*updateGame() {

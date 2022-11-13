@@ -1,7 +1,6 @@
 export interface PlanInterface {
-  nombre?: string;
-  id?: number;
-  precio?: number;
-  image?: string;
-  descripcion?: string;
+  Nombre?: string;
+  IDPlan?: number;
+  Precio?: number;
+  Descripcion?: string;
 }

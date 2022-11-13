@@ -1,17 +1,17 @@
-<div class="colm-md-4" *ngFor="let data of planes">
-  <div class="card text-center">
-    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-      {{data.Nombre}}
-      <button class="btn btn-danger"></button>
-    </div>
-    <div class="card-body">
-      <p>{{data.IDPlan}}</p>
-      <a href="/plan/edit" class="btn btn-info btn-block"></a>
-    </div>
-    <div class="card-body">
-      <p>{{data.Descripcion}}</p>
-      <a href="/plan/edit" class="btn btn-info btn-block"></a>
+<div class="container p-4" *ngFor="let plan of planes">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <a href="">
+            <h3 class="card-title">{{plan.Nombre}}</h3>
+          </a>
+          <p class="m-2">{{plan.Descripcion}}</p>
+          <p>{{plan.Precio}}</p>
+          <a href="/delete/{{plan.IDPlan}}" class="btn btn-danger">Eliminar plan</a>
+          <a href="/edit/{{plan.IDPlan}}" class="btn btn-secondary">Editar</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-

@@ -13,53 +13,27 @@ export class AddComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   plan: PlanInterface = {
-    id: 0,
-    nombre: '',
-    descripcion: '',
-  }
+    IDPlan: 0,
+    Nombre: '',
+    Precio: 0,
+    Descripcion: '',
+  };
 
   edit: boolean = false;
 
-  constructor(private planService:PlanService, private router:Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private planService:PlanService) { }
 
   ngOnInit(): void {
-    const params = this.activatedRoute.snapshot.params;
-    if (params.id) {
-      this.planService.consultarPlan(params.id)
-        .subscribe(
-          res => {
-            console.log(res);
-            this.plan = res;
-            this.edit = true;
-          },
-          err => console.log(err)
-        )
-    }
   }
 
   saveNewPlan(){
-    delete this.plan.id;
-    console.log(this.plan)
-    this.planService.guardarPlan(this.plan)
-      .subscribe(
-        res => {
-          console.log(res);
-          //this.router.navigate(['/plan']);
-        },
-        err => console.error(err)
-      )
-  }
-
-  updatePlan() {
-    console.log(this.plan)
-    this.planService.updatePlan(this.plan.id, this.plan)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.router.navigate(['/plan']);
-        },
-        err => console.error(err)
-      )
+    delete this.plan.IDPlan;
+    this.planService.guardarPlan(this.plan).subscribe(
+      res => {
+      console.log(res);
+      },
+      err => console.error(err)
+   )
   }
 
 }
