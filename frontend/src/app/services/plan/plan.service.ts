@@ -8,27 +8,27 @@ import { Observable } from 'rxjs';
 })
 export class PlanService {
 
-  servidor = "http://localhost:3000";
+  servidor = "http://localhost:3000/";
 
   constructor(private servicio: HttpClient) { }
 
   consultarPlanes() {
-    return this.servicio.get(`${this.servidor}/planes`);
+    return this.servicio.get(`${this.servidor}plan/`);
   }
 
   consultarPlan(id: number){
-    return this.servicio.get(`${this.servidor}/planes/${id}`);
+    return this.servicio.get(`${this.servidor}plan${id}`);
   }
 
   guardarPlan(plan: PlanInterface){
-    return this.servicio.post(`${this.servidor}/planes`, plan);
+    return this.servicio.post(`${this.servidor}plan`, plan);
   }
 
   updatePlan(id: number|undefined, updatePlan: PlanInterface): Observable<PlanInterface>{
-    return this.servicio.put(`${this.servidor}/planes/${id}`, updatePlan);
+    return this.servicio.put(`${this.servidor}plan${id}`, updatePlan);
   }
 
   deletePlan(id: number){
-    return this.servicio.delete(`${this.servidor}/planes/${id}`);
+    return this.servicio.delete(`${this.servidor}/plan/${id}`);
   }
 }

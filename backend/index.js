@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const planes = require("./routes/planes");
+const plan = require("./routes/plan");
 const cors = require("cors")
 
 
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
     res.json({ message: "ok" });
 });
 
-app.use("/planes", planes);
+app.use("/plan", plan);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
