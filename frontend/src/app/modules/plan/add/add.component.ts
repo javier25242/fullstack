@@ -1,7 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { PlanInterface } from '../../../interfaces/plan/plan-interface';
 import { PlanService } from 'src/app/services/plan/plan.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',

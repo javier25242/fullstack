@@ -18,36 +18,41 @@ async function getMultiple(page = 1){
 
 async function create(plan){
   console.log(plan)
-    const result = await db.query(
-      `INSERT INTO plan 
-      (Precio, Descripcion, Nombre) 
-      VALUES 
-      (${plan.Precio}, ${plan.Descripcion}, ${plan.Nombre})`
-    );
-  
-    let message = 'Error in creating plan';
-  
-    if (result.affectedRows) {
-      message = 'plan created successfully';
-    }
-  
-    return {message};
+  let sql = `INSERT INTO plan 
+    (Precio, Descripcion, Nombre) 
+    VALUES 
+    (${plan.Precio}, '${plan.Descripcion}', '${plan.Nombre}')`
+  console.log(sql)
+  const result = await db.query(
+    sql
+  );
+
+  let message = 'Error in creating plan';
+
+  if (result.affectedRows) {
+    message = 'plan created successfully';
   }
 
+  return {message};
+}
+
 async function update(id, plan){
-    const result = await db.query(
-        `UPDATE programming_languages 
-        SET Nombre=${plan.Nombre}, Precio="${plan.Precio}", Descripcion=${plan.Descripcion} 
-        WHERE IDPlan=${id}` 
-    );
-  
-    let message = 'Error in updating plan';
-  
-    if (result.affectedRows) {
-      message = 'plan updated successfully';
-    }
-  
-    return {message};
+  console.log(plan)
+  let sql = `UPDATE plan 
+    SET Nombre = '${plan.Nombre}', Precio = ${plan.Precio}, Descripcion = '${plan.Descripcion}' 
+    WHERE IDPlan = ${id}`
+  console.log(sql)
+  const result = await db.query(
+    sql
+  );
+
+  let message = 'Error in updating plan';
+
+  if (result.affectedRows) {
+    message = 'plan updated successfully';
+  }
+
+  return {message};
 }
 
 async function remove(id){

@@ -25,7 +25,7 @@ export class PlanService {
   }
 
   updatePlan(IDPlan: number|undefined, updatePlan: PlanInterface): Observable<PlanInterface>{
-    return this.servicio.put(`${this.servidor}plan${IDPlan}`, updatePlan);
+    return this.servicio.put(`${this.servidor}plan/${IDPlan}`, updatePlan);
   }
 
   deletePlan(IDPlan: number){

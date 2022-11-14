@@ -2,19 +2,8 @@ const express = require('express');
 const router = express.Router();
 const plan = require('../services/plan');
 
-router.post('/add', async (req, res) =>{
-  const { Nombre, Precio, Descripcion } = req.body;
-  const newPlan = {
-      Nombre,
-      Precio,
-      Descripcion,
-      
-  };
-  console.log(newPlan);
-  await pool.query('INSERT INTO plan set ?', [newPlan]);
-});
 
-/* GET programming languages. */
+/* GET plan */
 router.get('/', async function(req, res, next) {
   try {
     res.json(await plan.getMultiple(req.query.page));
@@ -24,7 +13,7 @@ router.get('/', async function(req, res, next) {
   }
 });
 
-/* POST programming language */
+/* POST plan */
 router.post('/', async function(req, res, next) {
     try {
       res.json(await plan.create(req.body));
@@ -34,7 +23,7 @@ router.post('/', async function(req, res, next) {
     }
 });
 
-/* PUT programming language */
+/* PUT plan */
 router.put('/:id', async function(req, res, next) {
     try {
       res.json(await plan.update(req.params.id, req.body));
@@ -44,7 +33,7 @@ router.put('/:id', async function(req, res, next) {
     }
 });
 
-/* DELETE programming language */
+/* DELETE plan */
 router.delete('/:id', async function(req, res, next) {
     try {
       res.json(await plan.remove(req.params.id));
