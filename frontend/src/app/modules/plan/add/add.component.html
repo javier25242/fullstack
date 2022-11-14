@@ -2,9 +2,9 @@
 <div class="row mt-5">
   <div class="col-md-4 offset-md-4">
     <div class="card">
-    <div class="card-header">Agregar un nuevo plan</div>
+    <div class="card-header">Nuevo Plan</div>
       <div class="card-body">
-        <form action="">
+        <form class="">
           <div class="form-group mt-2">
             <input type="text" name="Nombre" [(ngModel)]="plan.Nombre" placeholder="Nombre" class="form-control" autofocus>
           </div>
@@ -14,9 +14,11 @@
           <div class="form-group mt-3">
             <textarea name="Descripcion" rows="2" [(ngModel)]="plan.Descripcion" placeholder="Descripción" class="form-control"></textarea>
           </div>
-          <a class="btn btn-success btn-block mt-4 py-2 px-3" href="/plan" (click)="saveNewPlan()">
+          <div class="text-center">
+            <a class="btn btn-primary mt-4 py-2 px-3" href="/plan" (click)="saveNewPlan()">
             Guardar
-          </a>
+            </a>
+          </div>
         </form>
       </div>
     </div>
