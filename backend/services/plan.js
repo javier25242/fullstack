@@ -38,7 +38,7 @@ async function update(id, plan){
     const result = await db.query(
         `UPDATE programming_languages 
         SET Nombre=${plan.Nombre}, Precio="${plan.Precio}", Descripcion=${plan.Descripcion} 
-        WHERE id=${id}` 
+        WHERE IDPlan=${id}` 
     );
   
     let message = 'Error in updating plan';
@@ -52,7 +52,7 @@ async function update(id, plan){
 
 async function remove(id){
     const result = await db.query(
-      `DELETE FROM plan WHERE id=${id}`
+      `DELETE FROM plan WHERE IDPlan=${id}`
     );
   
     let message = 'Error in deleting Plan';

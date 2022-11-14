@@ -12,7 +12,7 @@
           <div class="form-group mt-3">
             <textarea name="Descripcion" rows="2" [(ngModel)]="plan.Descripcion" placeholder="Descripción" class="form-control"></textarea>
           </div>
-          <button class="btn btn-success btn-block mt-4 " (click)="saveNewPlan()">
+          <button class="btn btn-success btn-block mt-4 " routerLink="/plan" (click)="saveNewPlan()">
             Guardar
           </button>
         </form>

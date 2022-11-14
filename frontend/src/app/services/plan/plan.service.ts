@@ -16,19 +16,19 @@ export class PlanService {
     return this.servicio.get(`${this.servidor}plan/`);
   }
 
-  consultarPlan(id: number){
-    return this.servicio.get(`${this.servidor}plan${id}`);
+  consultarPlan(IDPlan: number){
+    return this.servicio.get(`${this.servidor}plan${IDPlan}`);
   }
 
   guardarPlan(plan: PlanInterface){
     return this.servicio.post(`${this.servidor}plan`, plan);
   }
 
-  updatePlan(id: number|undefined, updatePlan: PlanInterface): Observable<PlanInterface>{
-    return this.servicio.put(`${this.servidor}plan${id}`, updatePlan);
+  updatePlan(IDPlan: number|undefined, updatePlan: PlanInterface): Observable<PlanInterface>{
+    return this.servicio.put(`${this.servidor}plan${IDPlan}`, updatePlan);
   }
 
-  deletePlan(id: number){
-    return this.servicio.delete(`${this.servidor}/plan/${id}`);
+  deletePlan(IDPlan: number){
+    return this.servicio.delete(`${this.servidor}plan/${IDPlan}`);
   }
 }

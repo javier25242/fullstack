@@ -8,8 +8,8 @@
           </a>
           <p class="m-2">{{plan.Descripcion}}</p>
           <p>{{plan.Precio}}</p>
-          <a href="/delete/{{plan.IDPlan}}" class="btn btn-danger">Eliminar plan</a>
-          <a href="/edit/{{plan.IDPlan}}" class="btn btn-secondary">Editar</a>
+          <button class="btn btn-danger" (click)="deletePlan(plan.IDPlan)">Eliminar plan</button>
+          <button class="btn btn-secondary">Editar</button>
         </div>
       </div>
     </div>

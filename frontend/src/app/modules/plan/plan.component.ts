@@ -23,4 +23,13 @@ export class PlanComponent implements OnInit {
     );
   }
 
+  deletePlan(IDPlan: number){
+    this.PlanService.deletePlan(IDPlan).subscribe(
+      res => {
+        console.log(res)
+      },
+      err => console.error(err)
+    )
+  }
+
 }
