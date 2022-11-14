@@ -13,12 +13,12 @@ export class EditComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
 
-  plan: PlanInterface = {
+  /*plan: PlanInterface = {
     IDPlan: 0,
     Nombre: '',
     Precio: 0,
     Descripcion: '',
-  };
+  };*/
 
   edit: boolean = false;
 

@@ -3,12 +3,12 @@
     <div class="col-md-3">
       <div class="card text-center">
         <div class="card-body">
-          <a href="">
+          <a class="btn-primary py-2 px-3 text-decoration-none" routerLink="" (click)="viewPlan()">
             <h3 class="card-title">{{plan.Nombre}}</h3>
           </a>
           <p class="m-2">{{plan.Descripcion}}</p>
           <p>{{plan.Precio}}</p>
-          <button class="btn btn-danger" (click)="deletePlan(plan.IDPlan)">Eliminar plan</button>
+          <button class="btn btn-danger mx-3" (click)="deletePlan(plan.IDPlan)">Eliminar plan</button>
           <button class="btn btn-secondary">Editar</button>
         </div>
       </div>

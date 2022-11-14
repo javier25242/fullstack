@@ -32,4 +32,8 @@ export class PlanComponent implements OnInit {
     )
   }
 
+  viewPlan(){
+
+  }
+
 }
