@@ -13,7 +13,7 @@ export class EditComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   plan: PlanInterface = {
-    IDPlan: 40,
+    IDPlan: 41,
     Nombre: '',
     Precio: 0,
     Descripcion: '',
