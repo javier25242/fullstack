@@ -13,7 +13,7 @@ export class EditComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   plan: PlanInterface = {
-    IDPlan: 0,
+    IDPlan: 40,
     Nombre: '',
     Precio: 0,
     Descripcion: '',
@@ -24,8 +24,9 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updatePlan(){
-    this.planService.updatePlan(this.plan.IDPlan, this.plan).subscribe(
+  updatePlan(IDPlan:number|undefined){
+    console.log(IDPlan);
+    this.planService.updatePlan(IDPlan, this.plan).subscribe(
       res => {
         console.log(res);
       },
